@@ -51,7 +51,7 @@ app.use("/api/white-paper", whitePaperRoutes);
 app.use("/api/project-enquiries", projectRoutes);
 app.use((req, res) => {
   res.status(404).json({
-    success: false,
+    success: false, 
     message: "Route not found",
   });
 });
