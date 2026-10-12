@@ -4,8 +4,8 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import mongoose from "mongoose";
-import whitePaperRoutes from "./routes/whitePaper.routes.js";
-import projectRoutes from "./routes/project.routes.js";
+import whitePaperRoutes from "./src/routes/whitePaper.routes.js";
+import projectRoutes from "./src/routes/project.routes.js";
 
 const app = express();
 
