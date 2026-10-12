@@ -97,7 +97,8 @@ const StartProjectForm = ({ isOpen, setIsOpen }) => {
         };
 
         try {
-            const apiUrl = "http://localhost:5000";
+            const apiUrl = import.meta.env.VITE_API_URL ||
+    "http://localhost:5000";
 
             if (!apiUrl) {
                 throw new Error(
