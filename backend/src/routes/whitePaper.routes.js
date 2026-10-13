@@ -84,18 +84,10 @@ router.get("/download/:token", async (req, res, next) => {
 console.log("PDF DIAGNOSTIC", {
   cwd: process.cwd(),
   routeDir: import.meta.dirname,
-  expectedPath: path.resolve(
-    process.cwd(),
-    "documents",
-    "white-paper.pdf"
-  ),
-  exists: fs.existsSync(
-    path.resolve(
-      process.cwd(),
-      "documents",
-      "white-paper.pdf"
-    )
-  ),
+  pdfPath,
+  exists: fs.existsSync(pdfPath),
+documentsFolderExists:fs.existsSync(path.dirname(pdfPath))
+    ,
 });
 
     // Make sure PDF exists.
