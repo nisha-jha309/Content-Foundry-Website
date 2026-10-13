@@ -1,5 +1,15 @@
+
 {
-    "version":2,
-    "builds":[{"src":"api/index.js","use":"@vercel/node", "config":{"includeFiles":["documents/white-paper.pdf"]}}],
-    "routes":[{"src":"/(.*)","dest":"api/index.js"}]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "documents/**"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.js"
+    }
+  ]
 }

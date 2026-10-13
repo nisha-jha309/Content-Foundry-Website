@@ -1339,7 +1339,7 @@ const Home = () => {
                       inline-flex
                       items-center
                       gap-2
-                      bg-red-600
+                      bg-violet
                       px-4
                       py-2
                       text-xs
@@ -1408,7 +1408,7 @@ const Home = () => {
                     items-center
                     gap-2
                     rounded-full
-                    bg-red-600
+                    bg-violet
                     px-4
                     py-2
                     text-sm
