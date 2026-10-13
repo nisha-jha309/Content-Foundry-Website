@@ -40,7 +40,7 @@ const WorkDetails = () => {
   return (
     <main className="h-dvh w-full bg-black">
       {/* VIDEO SECTION  */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-screen max-w-full w-full overflow-hidden">
         {youtubeId ? (
           <iframe
             src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
