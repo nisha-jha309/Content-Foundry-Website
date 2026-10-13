@@ -119,7 +119,7 @@ const toggleMute = () => {
                         <p className="text-sm md:text-base lg:text-md md:w-[60%] 2xl:text-md tracking-wide">{drama.about}</p>
                     </div>
                     <div
-    className="w-full lg:w-[300px] 2xl :w-[400px] lg:h-[80vh] justify-self-center rounded-[34px] border-[10px] border-[#0f0d12] relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.53)] max-[900px]:mx-auto"
+    className="w-full lg:w-[300px] 2xl:w-[400px] lg:h-[80vh] justify-self-center rounded-[34px] border-[10px] border-[#0f0d12] relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.53)] max-[900px]:mx-auto"
 >
     {/* Video */}
     <video
