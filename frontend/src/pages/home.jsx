@@ -891,12 +891,12 @@ const Home = () => {
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-6 md:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
 
           {/* Cover  */}
-          <div className="relative md:min-w-[450px] md:max-w-[300px]">
+          <div className=" md:min-w-[450px] md:max-w-[300px]">
             <img src={founderMagazine} alt="Harshita Adlakha on the cover of Entrepreneurs Today, 30 Under 30 special issue, July 2024" className="block w-full" />
 
-            <span className="absolute -right-8 top-4 bg-violet px-3 py-1 text-sm font-bold text-white rotate-45">
+            {/* <span className="absolute -right-8 top-4 bg-violet px-3 py-1 text-sm font-bold text-white rotate-45">
               Cover story
-            </span>
+            </span> */}
           </div>
 
           {/* Content  */}
