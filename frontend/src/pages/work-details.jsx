@@ -38,9 +38,9 @@ const WorkDetails = () => {
   const youtubeId = getYoutubeId(work.youtube);
 
   return (
-    <main className="min-h-screen w-full bg-black">
-      {/* ================= VIDEO SECTION ================= */}
-      <section className="relative h-screen w-screen overflow-hidden">
+    <main className="h-dvh w-full bg-black">
+      {/* VIDEO SECTION  */}
+      <section className="relative h-screen w-full overflow-hidden">
         {youtubeId ? (
           <iframe
             src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
