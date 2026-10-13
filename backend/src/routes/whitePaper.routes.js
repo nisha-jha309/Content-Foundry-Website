@@ -71,18 +71,18 @@ router.get("/download/:token", async (req, res, next) => {
     }
 
     // PDF location:
-    // backend/private/white-paper.pdf
+    // backend/documents/white-paper.pdf
     const pdfPath = path.resolve(
       process.cwd(),
-      "private",
+      "documents",
       "white-paper.pdf"
     );
 
 console.log("PDF CHECK:", {
   cwd: process.cwd(),
   pdfExists: fs.existsSync(pdfPath),
-  privateFolderExists: fs.existsSync(
-    path.resolve(process.cwd(), "private")
+  documentsFolderExists: fs.existsSync(
+    path.resolve(process.cwd(), "documents")
   ),
 });
 
