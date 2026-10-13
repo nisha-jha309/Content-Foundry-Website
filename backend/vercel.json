@@ -1,5 +1,5 @@
 {
     "version":2,
-    "builds":[{"src":"api/index.js","use":"@vercel/node", "config":{"includeFiles":["documents/**"]}}],
+    "builds":[{"src":"api/index.js","use":"@vercel/node", "config":{"includeFiles":["documents/white-paper.pdf"]}}],
     "routes":[{"src":"/(.*)","dest":"api/index.js"}]
 }
