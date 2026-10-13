@@ -78,6 +78,14 @@ router.get("/download/:token", async (req, res, next) => {
       "white-paper.pdf"
     );
 
+console.log("PDF CHECK:", {
+  cwd: process.cwd(),
+  pdfExists: fs.existsSync(pdfPath),
+  privateFolderExists: fs.existsSync(
+    path.resolve(process.cwd(), "private")
+  ),
+});
+
     // Make sure PDF exists.
     if (!fs.existsSync(pdfPath)) {
       console.error(
