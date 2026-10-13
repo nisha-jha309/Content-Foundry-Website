@@ -73,10 +73,8 @@ router.get("/download/:token", async (req, res, next) => {
     // PDF location:
     // backend/documents/white-paper.pdf
     const pdfPath = path.resolve(
-      import.meta.dirname,
-      "..",
-      "..",
-      "..",
+process.cwd(),
+      "backend",
       "documents",
       "white-paper.pdf"
     );
