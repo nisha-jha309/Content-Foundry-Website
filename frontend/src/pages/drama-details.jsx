@@ -82,14 +82,14 @@ const MicroDramaDetails = () => {
 
             </div> */}
 
-            <section className="lg:h-screen w-full bg-black py-[25px] lg:py-[35px]">
-                <div className="max-w-[1440px] w-full mx-auto px-[5vw] text-white grid  grid-cols-1 lg:grid-cols-2 gap-5 items-center ">
+            <section className="lg:h-dvh w-full bg-black py-[25px] lg:py-[35px]">
+                <div className="w-full mx-auto px-[5vw] text-white grid  grid-cols-1 lg:grid-cols-2 gap-5 items-center ">
                     <div className="flex flex-col gap-6">
-                        <p className="uppercase text-xs  ">Micro-dramas for brands</p>
-                        <p className="text-5xl lg:text-7xl">{drama.title}</p>
-                        <p className="text-sm md:text-base lg:text-md md:w-[60%] tracking-wide">{drama.about}</p>
+                        <p className="uppercase text-xs 2xl:text-sm">Micro-dramas for brands</p>
+                        <p className="text-5xl lg:text-7xl 2xl:text-[5.5rem]">{drama.title}</p>
+                        <p className="text-sm md:text-base lg:text-md md:w-[60%] 2xl:text-md tracking-wide">{drama.about}</p>
                     </div>
-                    <div role="img" aria-label="Vertical episode frame" className="w-full lg:w-[300px] h-auto justify-self-center rounded-[34px] border-[10px] border-[#0f0d12] relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.53)] max-[900px]:mx-auto" >
+                    <div role="img" aria-label="Vertical episode frame" className="w-full lg:w-[300px] 2xl:w-[400px] h-auto lg:h-[80vh] justify-self-center rounded-[34px] border-[10px] border-[#0f0d12] relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.53)] max-[900px]:mx-auto" >
                         <video src={drama.episodes[episodeNumber].videoUrl} autoPlay muted loop className="w-full h-full object-cover"></video>
                     </div>
 

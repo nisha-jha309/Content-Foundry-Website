@@ -10,8 +10,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full sticky inset-0 bg-cream z-1000000 ">
-        <header className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between gap-5 border-b border-line scroll:border-none  px-[5vw] ">
+      <div className="w-full sticky inset-0 bg-cream z-1000000 border-b border-line ">
+        <header className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between gap-5 scroll:border-none  px-[5vw] ">
           <a href="/#top" className="h-auto w-[60px]" >
             <img src={Logo} alt="content" className="w-full h-full object-cover" />
           </a>
