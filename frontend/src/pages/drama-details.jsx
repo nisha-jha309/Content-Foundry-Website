@@ -2,10 +2,8 @@
 import { useRef, useState } from "react";
 import { Link, useParams } from "react-router";
 import { FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-import mockupDrama from "../../public/reel-drama.mp4";
+import {IoVolumeMute , IoVolumeHigh} from "react-icons/io5"
 import ContactCTA from "../components/contact-cta"
-// import content from "../data/scrollCard";
 import content from "../data/microdramas"
 
 const MicroDramaDetails = () => {
@@ -40,6 +38,37 @@ const MicroDramaDetails = () => {
     const drama = content.find(
         (item) => item.slug === slug
     );
+
+    const videoRef = useRef(null);
+
+const [isMuted, setIsMuted] = useState(true);
+const [progress, setProgress] = useState(0);
+
+const handleTimeUpdate = () => {
+    const video = videoRef.current;
+
+    if (video && video.duration) {
+        setProgress((video.currentTime / video.duration) * 100);
+    }
+};
+
+const handleSeek = (e) => {
+    const video = videoRef.current;
+
+    if (video && video.duration) {
+        video.currentTime = (Number(e.target.value) / 100) * video.duration;
+        setProgress(Number(e.target.value));
+    }
+};
+
+const toggleMute = () => {
+    const video = videoRef.current;
+
+    if (video) {
+        video.muted = !video.muted;
+        setIsMuted(video.muted);
+    }
+};
 
     if (!drama) {
         return (
@@ -89,9 +118,71 @@ const MicroDramaDetails = () => {
                         <p className="text-5xl lg:text-7xl 2xl:text-[5.5rem]">{drama.title}</p>
                         <p className="text-sm md:text-base lg:text-md md:w-[60%] 2xl:text-md tracking-wide">{drama.about}</p>
                     </div>
-                    <div role="img" aria-label="Vertical episode frame" className="w-full lg:w-[300px] 2xl:w-[400px] h-auto lg:h-[80vh] justify-self-center rounded-[34px] border-[10px] border-[#0f0d12] relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.53)] max-[900px]:mx-auto" >
-                        <video src={drama.episodes[episodeNumber].videoUrl} autoPlay muted loop className="w-full h-full object-cover"></video>
-                    </div>
+                    <div
+    className="w-full lg:w-[300px] justify-self-center rounded-[34px] border-[10px] border-[#0f0d12] relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.53)] max-[900px]:mx-auto"
+>
+    {/* Video */}
+    <video
+        ref={videoRef}
+        src={drama.episodes[episodeNumber].videoUrl}
+        autoPlay
+        muted={isMuted}
+        loop
+        playsInline
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleTimeUpdate}
+        className="w-full h-full object-cover block"
+    />
+
+    {/* Mute / Unmute Button */}
+    <button
+        type="button"
+        onClick={toggleMute}
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+        aria-pressed={!isMuted}
+        className="absolute top-4 right-4 z-10 flex items-center justify-center
+        w-10 h-10 rounded-full bg-black/50 text-white
+        backdrop-blur-sm hover:bg-black/70 transition-colors"
+    >
+        {isMuted ? (
+            <IoVolumeMute size={20} />
+        ) : (
+            <IoVolumeHigh size={20} />
+        )}
+    </button>
+
+    {/* Video Progress Bar */}
+    <div className="absolute bottom-3 left-3 right-3 h-[4px] bg-white/40 z-10 rounded-full">
+        <input
+            type="range"
+            min="0"
+            max="100"
+            step="0.1"
+            value={progress}
+            onChange={handleSeek}
+            aria-label="Seek video"
+            className="absolute inset-0 w-full h-full m-0 cursor-pointer appearance-none bg-transparent
+            [&::-webkit-slider-runnable-track]:h-[4px
+            ] [&::-webkit-slider-runnable-track]:bg-transparent
+            [&::-webkit-slider-thumb]:appearance-none
+            [&::-webkit-slider-thumb]:w-[10px]
+            [&::-webkit-slider-thumb]:h-[10px]
+            [&::-webkit-slider-thumb]:rounded-full
+            [&::-webkit-slider-thumb]:bg-white
+            [&::-webkit-slider-thumb]:border-2
+            [&::-webkit-slider-thumb]:opacity-0
+            [&::-webkit-slider-thumb]:border-white
+            active:[&::-webkit-slider-thumb]:opacity-100
+            focus-visible:[&::-webkit-slider-thumb]:opacity-100
+            [&::-moz-range-track]:h-[4px]
+            [&::-moz-range-thumb]:w-0
+            [&::-moz-range-thumb]:h-0"
+            style={{
+                background: `linear-gradient(to right, white ${progress}%, transparent ${progress}%)`,
+            }}
+        />
+    </div>
+</div>
 
                 </div>
             </section>
@@ -128,14 +219,14 @@ const MicroDramaDetails = () => {
                                         onClick={() => scroll("left")}
                                         className="w-10 h-10 bg-white border-black border-2 text-black flex items-center justify-center hover:bg-violet hover:text-white hover:border-violet "
                                     >
-                                        <FaAngleLeft />
+                                        <FaChevronLeft />
                                     </button>
                                     {/* RIGHT BUTTON */}
                                     <button
                                         onClick={() => scroll("right")}
                                         className="w-10 h-10 border-black border-2 bg-white text-black flex items-center justify-center group-hover:visible hover:bg-violet hover:text-white hover:border-violet "
                                     >
-                                        <FaAngleRight />
+                                        <FaChevronRight />
 
                                     </button>
                                 </div>
