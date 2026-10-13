@@ -6,8 +6,6 @@ import logos from "../data/logo";
 import WebsiteGif from "../../src/assets/content-foundry-show-reel.mp4";
 import mockupDrama from "../../public/reel-drama.mp4";
 import heroNaJaneKyu from "../../src/assets/hero-na-jane-kyu.webp";
-import naJaneKyu from "../../src/assets/na-jane-kyu.webp";
-import campusDiaries from "../../src/assets/campus-diaries.webp";
 import founderMagazine from "../../src/assets/founder-magazine.avif"
 import Testimonial from "../components/testimonial";
 import WhitePaperForm from "../components/white-paper-form.jsx";
@@ -37,49 +35,13 @@ const Home = () => {
     });
   };
 
-  const seriesData = [
-    {
-      image: naJaneKyu,
-      badge: "Live Shoot",
-      category: "10 episodes",
-      title: "Na Jane Kyu",
-      action: "Watch the series ↗",
-      href: "/micro-drama/na-jane-kyu",
-      type: "link",
-    },
-    {
-      image: campusDiaries,
-      badge: "AI video",
-      category: "Campus series",
-      title: "Campus Diary",
-      action: "Coming soon",
-      type: "text",
-    },
-    {
-      image: naJaneKyu,
-      badge: "Original",
-      category: "10 episodes",
-      title: "The Untold Story",
-      action: "Coming soon",
-      type: "text",
-    },
-    {
-      image: campusDiaries,
-      badge: "AI video",
-      category: "New series",
-      title: "Beyond Campus",
-      action: "Coming soon",
-      type: "text",
-    },
-    {
-      image: naJaneKyu,
-      badge: "Live Shoot",
-      category: "Original series",
-      title: "Unfiltered",
-      action: "Coming soon",
-      type: "text",
-    },
-  ];
+const formatStrip =[
+              "Branded micro-dramas",
+              "AI & shoot-based production",
+              "Platform-ready edits",
+              "Hindi & regional-language versions",
+              "Brand films",
+            ];
 
   const faqData = [
     {
@@ -233,13 +195,7 @@ const Home = () => {
           </b>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3 sm:gap-x-6 lg:gap-x-8">
-            {[
-              "Branded micro-dramas",
-              "AI & shoot-based production",
-              "Platform-ready edits",
-              "Hindi & regional-language versions",
-              "Brand films",
-            ].map((service) => (
+            {formatStrip.map((service) => (
               <span
                 key={service}
                 className="text-xs font-extrabold leading-relaxed sm:text-sm lg:text-base "
@@ -291,16 +247,6 @@ const Home = () => {
                 Brands and institutions served
               </span>
             </div>
-
-            {/* <div className="p-[26px_22px_26px_0]">
-              <b className="block font-serif text-[clamp(40px,4.5vw,64px)] leading-none tracking-[-0.04em]">
-                8
-              </b>
-
-              <span className="text-s text-muted">
-                production services in-house
-              </span>
-            </div> */}
 
             <div className="min-w-[900px]:p-[26px_22px_26px_0]">
               <b className="block font-serif text-[clamp(40px,4.5vw,44px)] leading-none tracking-[-0.04em]">
@@ -846,49 +792,9 @@ const Home = () => {
       </section>
 
       {/* FOUNDER */}
-      {/* <section
-        id="founder"
-        className="px-5 py-20 sm:px-6 lg:py-24 xl:px-8"
-      >
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:gap-10">
-           Cover
-          <div className="relative md:min-w-[450px] md:max-w-[300px]">
-            <img src={founderMagazine} alt="Harshita Adlakha on the cover of Entrepreneurs Today, 30 Under 30 special issue, July 2024" className="block w-full" />
-
-            <span className="absolute -right-8 top-4 bg-violet px-3 py-1 text-sm font-bold text-white rotate-45">
-              Cover story
-            </span>
-          </div>
-
-          <div>
-            <div className="uppercase tracking-[0.19em] text-xs font-black text-violet mb-4">The studio</div>
-            <h2 className="mt-3 font-serif text-4xl font-normal leading-tight sm:text-5xl lg:text-6xl">
-              Built for ideas.
-              <br />
-              Built to make them.
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-copy sm:text-lg">
-              Founded by Harshita Adlakha, Content Foundry brings together
-              writers, directors, producers, cinematographers, editors and
-              motion artists. We take a story from first thought to final
-              frame, choosing the production approach that fits the idea.
-            </p>
-            <div className="mt-6">
-              <a
-                href="https://contentfoundry.in/about-us/"
-                className="inline-flex items-center justify-center border border-black px-5 py-3 text-sm font-black text-black transition-all duration-200 hover:border-violet hover:bg-violet hover:text-white"
-              >
-                Meet the studio ↗
-              </a>
-            </div>
-          </div>
-
-
-        </div>
-      </section> */}
-
+     
       <section id="founder" className={`${layoutClass} bg-cream`}>
-        <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-6 md:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
 
           {/* Cover  */}
           <div className=" md:min-w-[450px] md:max-w-[300px]">
@@ -939,7 +845,7 @@ const Home = () => {
 
       {/* PROOF */}
       <section id="clients" className={`${layoutClass} text-white bg-[#201e1a]`}>
-        <div className="mx-auto max-w-[1440px] px-[5vw]">
+        <div className="mx-auto max-w-[1440px]">
           <div className="text-xs mb-4 font-black uppercase tracking-[0.19em] text-violet">
             Experience behind the stories
           </div>
@@ -1192,7 +1098,6 @@ const Home = () => {
         gap-4
         overflow-x-auto
         overflow-y-visible
-        px-[5vw]
         pt-[30px]
         pb-[40px]
 
@@ -1350,8 +1255,7 @@ const Home = () => {
                       hover:opacity-80
                     "
                         >
-                          {card.link || "Play Now"}
-
+                         View work ↗
                         </Link>
                       ) 
                     </div>
@@ -1419,7 +1323,7 @@ const Home = () => {
                     hover:bg-red-500
                   "
                       >
-                        {card.link || "Play Now"}
+                        View work ↗
                       </Link>
                     
                   </div>

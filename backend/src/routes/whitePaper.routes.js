@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 import { Router } from "express";
 import rateLimit from "express-rate-limit";
@@ -9,6 +10,7 @@ import WhitePaperLead from "../models/WhitePaperLead.js";
 import { createWhitePaperLead } from "../controllers/whitePaper.controller.js";
 
 const router = Router();
+const routeDir = path.dirname(fileURLToPath(import.meta.url));
 
 // ------------------------------------
 // Rate limit form submissions
@@ -70,23 +72,13 @@ router.get("/download/:token", async (req, res, next) => {
       });
     }
 
-    // PDF location:
-    // backend/documents/white-paper.pdf
+    // Resolve from this module so the path is independent of Render's root dir.
     const pdfPath = path.resolve(
-process.cwd(),
-      "backend",
+      routeDir,
+      "../../",
       "documents",
       "white-paper.pdf"
     );
-
-console.log("PDF DIAGNOSTIC", {
-  cwd: process.cwd(),
-  routeDir: import.meta.dirname,
-  pdfPath,
-  exists: fs.existsSync(pdfPath),
-documentsFolderExists:fs.existsSync(path.dirname(pdfPath))
-    ,
-});
 
     // Make sure PDF exists.
     if (!fs.existsSync(pdfPath)) {
@@ -120,5 +112,5 @@ documentsFolderExists:fs.existsSync(path.dirname(pdfPath))
     next(error);
   }
 });
-
+ 
 export default router;
