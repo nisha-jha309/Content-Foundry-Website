@@ -41,7 +41,7 @@ const MicroDramaDetails = () => {
 
     const videoRef = useRef(null);
 
-const [isMuted, setIsMuted] = useState(true);
+const [isMuted, setIsMuted] = useState(false);
 const [progress, setProgress] = useState(0);
 
 const handleTimeUpdate = () => {
