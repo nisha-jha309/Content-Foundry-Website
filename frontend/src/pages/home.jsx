@@ -177,7 +177,7 @@ const formatStrip =[
 
         {/* Hero Artwork */}
         <Link to="/micro-drama/na-jane-kyu">
-          <div className="relative flex md:min-h-[480px] items-center justify-center overflow-hidden bg-purple lg:min-h-[500px] overflow-hidden">
+          <div className="relative flex md:min-h-[480px] items-center justify-center overflow-hidden bg-purple lg:min-h-[500px] h-full overflow-hidden">
             <img src={heroNaJaneKyu} alt="na jane kyu banner" className="w-full h-auto md:h-full object-cover hover:scale-[1.08] transition-transform duration-300 ease" />
           </div>
         </Link>
@@ -188,8 +188,8 @@ const formatStrip =[
       {isOpenWhite && (<WhitePaperForm isOpenWhite={isOpenWhite} setIsOpenWhite={setIsOpenWhite} />)}
 
       {/* FORMAT STRIP */}
-      <section className="overflow-hidden bg-ink py-6 text-white sm:py-7">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-[5vw] md:flex-row md:items-center md:gap-6">
+      <section className="overflow-hidden bg-ink py-6 text-white sm:py-7 px-[5vw]">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 md:flex-row md:items-center md:gap-6">
           <b className="shrink-0 text-[11px] uppercase tracking-[0.17em] text-[#c9bdb0]">
             What we do
           </b>
@@ -209,8 +209,9 @@ const formatStrip =[
 
       {/* SHOWREEL */}
       <section id="showreel" className="bg-[#211e22] py-8 md:py-10 lg:py-20  text-white">
-        <div className="mx-auto max-w-[1440px] px-[5vw]">
-          <div className="text-xs font-black uppercase tracking-[0.19em] text-violet mb-4 my-[13px_0_25px] lg:m-0">
+        <div className="mx-auto">
+          <div className="max-w-[1440px] px-[5vw]">
+              <div className="text-xs font-black uppercase tracking-[0.19em] text-violet mb-4 my-[13px_0_25px] lg:m-0">
             Our production capabilities
           </div>
 
@@ -222,6 +223,7 @@ const formatStrip =[
             <p className="lg:max-w-[420px] text-sm md:text-base leading-[1.6] text-[#ddd]">
               Explore our films, campaigns and storytelling work. With an in-house shoot studio, complete production infrastructure and 30 years of advertising experience behind us, we bring brand understanding to every production.
             </p>
+          </div>
           </div>
         </div>
         <div className=" mt-[30px] w-full overflow-hidden ">

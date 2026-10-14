@@ -10,8 +10,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full sticky inset-0 bg-cream z-1000000 border-b border-line ">
-        <header className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between gap-5 scroll:border-none  px-[5vw] ">
+      <div className="w-full sticky inset-0 bg-cream z-1000000 border-b border-line px-[5vw]">
+        <header className="mx-auto flex h-[78px] w-full max-w-[1440px] items-center justify-between gap-5 scroll:border-none">
           <a href="/#top" className="h-auto w-[60px]" >
             <img src={Logo} alt="content" className="w-full h-full object-cover" />
           </a>
@@ -20,12 +20,12 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
-            className="flex h-11 w-11 items-center justify-center md:hidden"
+            className="flex h-11 w-11 items-center justify-center lg:hidden"
           >
             {isMenuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
           </button>
 
-          <nav className="hidden items-center gap-3 text-sm font-bold sm:gap-[30px] md:flex">
+          <nav className="hidden items-center gap-[10px] text-sm lg:text-xs lg:gap-3 xl:gap-5 font-bold sm:gap-[30px] lg:flex">
             <a href="/#stories" className="hidden transition-opacity hover:opacity-60 md:block"  >
               Micro-dramas
             </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
           </nav>
 
           {isMenuOpen && (
-            <nav className="absolute left-0 top-full z-50 flex max-h-[calc(100dvh-78px)] w-full flex-col gap-5 overflow-y-auto border-b border-line bg-cream px-[5vw] py-6 text-base font-bold shadow-lg md:hidden">
+            <nav className="absolute left-0 top-full z-50 flex max-h-[calc(100dvh-78px)] w-full flex-col gap-5 overflow-y-auto border-b border-line bg-cream px-[5vw] py-6 text-base font-bold shadow-lg lg:hidden">
 
               <a href="/#stories" onClick={() => setIsMenuOpen(false)}>
                 Micro-dramas

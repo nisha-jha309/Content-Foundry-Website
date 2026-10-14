@@ -3,15 +3,18 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-[#171613] py-[35px] text-white">
+    <footer className="bg-[#171613] py-[35px] text-white px-[5vw]
+">
+  <div className=" mx-auto max-w-[1440px]">
+
+  </div>
       <div
         className="
-          mx-auto
-          flex max-w-[1440px]
+         
+          flex
           flex-col
           items-start
-          gap-8
-          px-[5vw]
+          gap-4
           text-[13px]
           sm:flex-row
           sm:flex-wrap
