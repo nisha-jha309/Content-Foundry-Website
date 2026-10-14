@@ -5,12 +5,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#171613] py-[35px] text-white px-[5vw]
 ">
-  <div className=" mx-auto max-w-[1440px]">
-
-  </div>
       <div
         className="
-         
+         mx-auto max-w-[1440px]
           flex
           flex-col
           items-start

@@ -209,8 +209,8 @@ const formatStrip =[
 
       {/* SHOWREEL */}
       <section id="showreel" className="bg-[#211e22] py-8 md:py-10 lg:py-20  text-white">
-        <div className="mx-auto">
-          <div className="max-w-[1440px] px-[5vw]">
+        <div className="w-full px-[5vw]">
+          <div className="max-w-[1440px] mx-auto">
               <div className="text-xs font-black uppercase tracking-[0.19em] text-violet mb-4 my-[13px_0_25px] lg:m-0">
             Our production capabilities
           </div>
